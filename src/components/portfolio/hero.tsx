@@ -36,7 +36,7 @@ const Hero = () => {
 					animate={{opacity: 1, scale: 1}}
 					transition={{delay: 0.3, type: 'spring'}}
 					className='from-foreground to-muted-foreground mb-6 bg-linear-to-r via-white bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-7xl md:text-8xl'>
-					{personalInfo.name}.
+					{personalInfo.name}
 				</motion.h1>
 
 				{/* Dynamic Role / Typewriter */}

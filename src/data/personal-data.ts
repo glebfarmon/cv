@@ -6,7 +6,7 @@ export const personalInfo: PersonalInfo = {
 	email: 'glebfarmon@gmail.com',
 	linkedin: 'https://linkedin.com/in/glebfarmon',
 	github: 'https://github.com/glebfarmon',
-	resumeLink: '/CV_HLIB_INYTSKY_FULLSTACK.pdf',
+	resumeLink: '/CV_HLIB_ILNYTSKY_FULLSTACK.pdf',
 	bio: "Full stack developer who loves building with startups. I thrive in fast-paced environments where we iterate quickly and prioritize user happiness. I'm happiest when collaborating with teams who care about impact.",
 	shortBio: 'I build things for the web.'
 }
