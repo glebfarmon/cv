@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion'
 import SectionTitle from './section-title'
-import {skills} from '@/data/portfolio-data'
+import {skills} from '@/data'
 import type {SkillItem} from '@/data/types'
 
 interface SkillCategoryProps {

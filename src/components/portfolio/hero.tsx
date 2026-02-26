@@ -1,7 +1,7 @@
 import {motion} from 'framer-motion'
 import {FaChevronDown, FaGithub, FaLinkedin} from 'react-icons/fa'
 import TypeWriter from '@/components/ui/type-writer'
-import {personalInfo} from '@/data/portfolio-data'
+import {personalInfo} from '@/data/personal-data'
 
 const Hero = () => {
 	return (
@@ -75,6 +75,7 @@ const Hero = () => {
 					transition={{delay: 0.6}}
 					className='flex items-center justify-center gap-8'>
 					<a
+						aria-label={'github'}
 						href={personalInfo.github}
 						target='_blank'
 						rel='noreferrer'
@@ -82,6 +83,7 @@ const Hero = () => {
 						<FaGithub size={32} />
 					</a>
 					<a
+						aria-label={'linkedin'}
 						href={personalInfo.linkedin}
 						target='_blank'
 						rel='noreferrer'

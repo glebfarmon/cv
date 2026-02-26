@@ -1,5 +1,5 @@
 import {FaHeart} from 'react-icons/fa'
-import {personalInfo} from '@/data/portfolio-data'
+import {personalInfo} from '@/data/personal-data'
 
 const currentYear = new Date().getFullYear()
 

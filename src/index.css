@@ -3,6 +3,23 @@
 @import 'shadcn/tailwind.css';
 @import '@fontsource-variable/inter';
 
+/* Optimized font loading */
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url('@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url('@fontsource/poppins/files/poppins-latin-400-normal.woff2') format('woff2');
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {

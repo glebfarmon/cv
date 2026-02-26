@@ -21,12 +21,11 @@ export interface Education {
 export interface Project {
   title: string;
   tech: string[];
-  description: ReactNode[];
+  description: string[];
   date: string;
   githubLink: string | null;
   liveLink: string | null;
   category: string;
-  icon: ReactNode;
   image: string;
 }
 

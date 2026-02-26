@@ -1,5 +1,5 @@
 import {motion} from 'framer-motion'
-import {personalInfo} from '@/data/portfolio-data'
+import {personalInfo} from '@/data/personal-data'
 
 const Contact = () => {
 	return (

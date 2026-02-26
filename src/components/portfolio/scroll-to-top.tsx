@@ -1,6 +1,5 @@
 import {useEffect, useState} from 'react'
 import {FaArrowUp} from 'react-icons/fa'
-import {animateScroll as scroll} from 'react-scroll'
 
 const ScrollToTop = () => {
 	const [isVisible, setIsVisible] = useState(false)
@@ -14,7 +13,10 @@ const ScrollToTop = () => {
 	}
 
 	const scrollToTop = () => {
-		scroll.scrollToTop({duration: 50})
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		})
 	}
 
 	useEffect(() => {

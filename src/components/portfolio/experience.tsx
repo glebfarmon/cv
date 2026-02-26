@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion'
 import SectionTitle from './section-title'
-import {experience} from '@/data/portfolio-data'
+import {experience} from '@/data/personal-data'
 
 const Experience = () => {
 	return (

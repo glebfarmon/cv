@@ -1,19 +1,26 @@
 import {AnimatePresence, motion} from 'framer-motion'
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
-import {Link} from 'react-scroll'
 import {navLinks} from '@/constants/nav-links'
-import {personalInfo} from '@/data/portfolio-data'
+import {personalInfo} from '@/data/personal-data'
+import {useScrollPosition} from '@/hooks'
+
+const smoothScrollTo = (elementId: string, offset = -100) => {
+	const element = document.getElementById(elementId)
+	if (element) {
+		const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+		const offsetPosition = elementPosition + offset
+
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: 'smooth'
+		})
+	}
+}
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
-	const [scrolled, setScrolled] = useState(false)
-
-	useEffect(() => {
-		const handleScroll = () => setScrolled(window.scrollY > 50)
-		window.addEventListener('scroll', handleScroll)
-		return () => window.removeEventListener('scroll', handleScroll)
-	}, [])
+	const {scrolled} = useScrollPosition(50)
 
 	return (
 		<motion.nav
@@ -27,28 +34,30 @@ const Navbar = () => {
 			}`}>
 			<div className='flex h-16 items-center justify-between px-6'>
 				{/* Logo - Scrolls to Top */}
-				<Link
-					to='hero'
-					smooth={true}
-					duration={500}
-					offset={-100}
+				<a
+					href='#hero'
+					onClick={(e) => {
+						e.preventDefault()
+						smoothScrollTo('hero', -100)
+					}}
 					className='from-primary to-destructive cursor-pointer bg-linear-to-r bg-clip-text font-mono text-2xl font-bold tracking-tighter text-transparent transition-transform hover:scale-105'>
 					&lt;glebfarmon /&gt;
-				</Link>
+				</a>
 
 				{/* Desktop Links */}
 				<div className='hidden h-full items-center space-x-8 md:flex'>
 					{navLinks.map(link => (
-						<Link
+						<a
 							key={link.name}
-							to={link.to}
-							smooth={true}
-							duration={500}
-							offset={-100}
+							href={`#${link.to}`}
+							onClick={(e) => {
+								e.preventDefault()
+								smoothScrollTo(link.to, -100)
+							}}
 							className='text-muted-foreground hover:text-primary group relative flex h-full cursor-pointer items-center text-lg font-medium transition-colors'>
 							{link.name}
 							<span className='bg-primary absolute bottom-4 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>
-						</Link>
+						</a>
 					))}
 					<a
 						href={personalInfo.resumeLink}
@@ -77,16 +86,17 @@ const Navbar = () => {
 						className='bg-card/95 overflow-hidden rounded-b-md border-t border-white/10 backdrop-blur-xl md:hidden'>
 						<div className='flex flex-col items-center space-y-6 py-6'>
 							{navLinks.map(link => (
-								<Link
+								<a
 									key={link.name}
-									to={link.to}
-									smooth={true}
-									duration={500}
-									offset={-100}
-									className='text-foreground hover:text-primary cursor-pointer text-lg font-medium'
-									onClick={() => setIsOpen(false)}>
+									href={`#${link.to}`}
+									onClick={(e) => {
+										e.preventDefault()
+										smoothScrollTo(link.to, -100)
+										setIsOpen(false)
+									}}
+									className='text-foreground hover:text-primary cursor-pointer text-lg font-medium'>
 									{link.name}
-								</Link>
+								</a>
 							))}
 							<a
 								href={personalInfo.resumeLink}

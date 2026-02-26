@@ -1,7 +1,7 @@
 import {motion} from 'framer-motion'
 import {FaGraduationCap} from 'react-icons/fa'
 import SectionTitle from './section-title'
-import {education} from '@/data/portfolio-data'
+import {education} from '@/data/personal-data'
 
 const About = () => {
 	return (
