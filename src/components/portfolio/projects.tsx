@@ -38,7 +38,7 @@ const Projects = () => {
 										loading='lazy'
 										width='800'
 										height='500'
-										className='h-auto w-full transform object-cover grayscale transition-transform duration-700 group-hover:grayscale-0'
+										className='h-auto w-full transform object-cover grayscale transition-transform duration-700 group-hover:grayscale-0 group-active:grayscale-0'
 									/>
 								</div>
 								<div
