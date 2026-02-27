@@ -10,6 +10,30 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
 
+		<!-- Preconnect to font CDN if using external fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+
+		<!-- Preload critical fonts to prevent FOIT on iOS Safari -->
+		<link
+			rel="preload"
+			href="/src/assets/fonts/inter-latin-wght-normal.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin />
+
+		<!-- Inline critical CSS for instant paint -->
+		<style>
+			/* Prevent FOIT - show fallback immediately */
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+				background-color: #242430;
+				color: #fcfcfc;
+			}
+			#root {
+				min-height: 100vh;
+			}
+		</style>
+
 		<!-- Primary Meta Tags -->
 		<title>Hlib Ilnytsky - Full Stack Developer Portfolio</title>
 		<meta

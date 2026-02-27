@@ -36,8 +36,10 @@ const Projects = () => {
 										}
 										alt={`${project.title} preview`}
 										loading='lazy'
+										decoding='async'
 										width='800'
 										height='500'
+										fetchPriority='low'
 										className='h-auto w-full transform object-cover grayscale transition-transform duration-700 group-hover:grayscale-0 group-active:grayscale-0'
 									/>
 								</div>

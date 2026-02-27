@@ -28,12 +28,32 @@ export default defineConfig({
 	build: {
 		rollupOptions: {
 			output: {
-				manualChunks: {
-					'framer-motion': ['framer-motion'],
-					'react-vendor': ['react', 'react-dom'],
-					'icons': ['react-icons']
+				manualChunks: (id) => {
+					// Separate vendor chunks for better caching
+					if (id.includes('node_modules')) {
+						if (id.includes('framer-motion')) {
+							return 'framer-motion'
+						}
+						if (id.includes('react') || id.includes('react-dom')) {
+							return 'react-vendor'
+						}
+						if (id.includes('react-icons')) {
+							return 'icons'
+						}
+						if (id.includes('@fontsource')) {
+							return 'fonts'
+						}
+						// Other vendor code
+						return 'vendor'
+					}
 				}
 			}
-		}
+		},
+		// Optimize chunk size for mobile
+		chunkSizeWarningLimit: 500,
+		// Enable CSS code splitting
+		cssCodeSplit: true,
+		// Use esbuild for faster minification (default)
+		minify: 'esbuild'
 	}
 })
