@@ -2,44 +2,28 @@ import type {Project} from './types'
 
 export const projectsData: Project[] = [
 	{
-		title: 'AyurTrace',
-		tech: ['Hyperledger Fabric', 'IoT', 'React.js', 'Smart Contracts'],
+		title: 'WinWinTravel',
+		tech: ['React', 'Chakra UI', 'Nx', 'TypeScript'],
 		description: [
-			'1st Place Winner SIH 2025 Round 1',
-			'Directed a blockchain-based supply chain web application for Ayurvedic herb traceability',
-			'Implemented immutable on-chain tracking with QR verification, ensuring 100% supply chain transparency'
-		],
-		date: 'Aug 2025 – Sep 2025',
-		githubLink: 'https://github.com/aditiarya37',
-		liveLink: 'https://ayurtrace-sepia.vercel.app',
-		category: 'Blockchain',
-		image: '/AyurTrace.png'
-	},
-	{
-		title: 'MaViK-39',
-		tech: ['RAG', 'IoT', 'React.js', 'TensorFlow', 'Cloud'],
-		description: [
-			'National Finalist SIH 2025',
-			'Delivered an IoT-enabled lab management web application, decreasing equipment downtime by 25%',
+			'Built AI-powered hotel discovery combining ChatGPT, Tinder-style matching, and interactive comparison tables for travelers with disabilities and pet owners',
+			'Designed unique side-by-side hotel comparison feature (absent on Booking/Airbnb) with accessibility and pet policy filters',
 			'Integrated biometric authentication, voice interface, and RAG-powered AI chatbot, improving operational efficiency by 40%'
 		],
-		date: 'Nov 2025 – Dec 2025',
-		githubLink: 'https://github.com/aditiarya37',
-		liveLink: 'https://mavik-39.vercel.app',
-		category: 'IoT & AI',
-		image: '/MaViK-39.jpeg'
+		githubLink: null,
+		liveLink: 'https://demo.winwin.travel',
+		image: '/winwintravel.jpg'
 	},
 	{
-		title: 'DevLink',
-		tech: ['React JS', 'Node.js', 'Express.js', 'MongoDB'],
+		title: 'CRM Auto Donate System',
+		tech: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'CRM'],
 		description: [
-			'Designed and developed a full-stack developer community platform enabling users to create profiles, share projects, and collaborate',
-			'Owned the system end-to-end by implementing frontend architecture, backend APIs, and secure authentication'
+			'Created full-stack payment CRM system handling donations and transaction management, successfully commercialized across 70+ server deployments',
+			'Engineered scalable payment modules with PCI-compliant transaction security and seamless integrations with major payment gateways',
+			'Delivered custom implementations for enterprise clients generating 2K-3K PLN monthly recurring revenue with hands-on technical support'
 		],
-		date: 'June 2025 – July 2025',
-		githubLink: 'https://github.com/aditiarya37',
+		deprecated: true,
+		githubLink: null,
 		liveLink: null,
-		category: 'Full Stack',
-		image: '/DevLink.jpeg'
+		image: '/minecraft.jpg'
 	}
 ]

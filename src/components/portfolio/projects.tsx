@@ -1,8 +1,8 @@
 import {motion} from 'framer-motion'
 import {FaExternalLinkAlt, FaGithub} from 'react-icons/fa'
+import {useReducedMotion} from '@/hooks'
 import SectionTitle from './section-title'
 import {projectsData} from '@/data/projects-data'
-import {useReducedMotion} from '@/hooks'
 
 const Projects = () => {
 	const prefersReducedMotion = useReducedMotion()
@@ -30,7 +30,10 @@ const Projects = () => {
 								<div className='group-hover:border-primary/30 relative overflow-hidden rounded-md border border-white/10 shadow-2xl transition-all duration-300'>
 									<div className='bg-card/20 absolute inset-0 z-10 transition-all duration-500 group-hover:bg-transparent'></div>
 									<img
-										src={project.image || 'https://placehold.co/800x500/1a1a2e/00f5c3?text=Project+Preview'}
+										src={
+											project.image ||
+											'https://placehold.co/800x500/1a1a2e/00f5c3?text=Project+Preview'
+										}
 										alt={`${project.title} preview`}
 										loading='lazy'
 										width='800'
@@ -46,7 +49,9 @@ const Projects = () => {
 
 							{/* Text Section */}
 							<div className='relative z-20 flex w-full flex-col items-start lg:w-2/5'>
-								<p className='text-primary mb-2 font-mono text-sm'>Featured Project</p>
+								<p className='text-primary mb-2 font-mono text-sm'>
+									{project?.deprecated ? 'Deprecated' : 'Featured'} Project
+								</p>
 								<h3 className='text-foreground hover:text-primary mb-6 cursor-pointer text-3xl font-bold transition-colors'>
 									{project.title}
 								</h3>
@@ -55,17 +60,12 @@ const Projects = () => {
 								<div className='bg-card mb-6 rounded-md border border-white/5 p-6 shadow-xl transition-shadow hover:shadow-2xl'>
 									<ul className='text-muted-foreground list-none space-y-2 leading-relaxed'>
 										{project.description.map((point, i) => {
-											const isPrimary = point.includes('1st Place') || point.includes('National Finalist') || point.includes('100%') || point.includes('25%') || point.includes('40%')
 											return (
-												<li key={i} className='flex items-start'>
+												<li
+													key={i}
+													className='flex items-start'>
 													<span className='text-primary mt-1 mr-2'>▹</span>
-													<span>
-														{isPrimary ? (
-															<span className='font-semibold text-primary'>{point}</span>
-														) : (
-															point
-														)}
-													</span>
+													<span>{point}</span>
 												</li>
 											)
 										})}
@@ -75,7 +75,9 @@ const Projects = () => {
 								{/* Tech Stack */}
 								<ul className='text-muted-foreground/80 mb-8 flex flex-wrap gap-4 font-mono text-sm'>
 									{project.tech.map((tech, i) => (
-										<li key={i} className='hover:text-primary transition-colors'>
+										<li
+											key={i}
+											className='hover:text-primary transition-colors'>
 											{tech}
 										</li>
 									))}
@@ -90,7 +92,10 @@ const Projects = () => {
 											rel='noreferrer'
 											aria-label={`View ${project.title} on GitHub`}
 											className='border-muted-foreground/30 text-foreground hover:border-primary hover:text-primary group flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-all duration-300'>
-											<FaGithub size={18} className='transition-transform group-hover:scale-110' />
+											<FaGithub
+												size={18}
+												className='transition-transform group-hover:scale-110'
+											/>
 											<span>GitHub Repo</span>
 										</a>
 									)}
@@ -101,7 +106,10 @@ const Projects = () => {
 											rel='noreferrer'
 											aria-label={`View ${project.title} live demo`}
 											className='border-muted-foreground/30 text-foreground hover:border-primary hover:text-primary group flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-all duration-300'>
-											<FaExternalLinkAlt size={16} className='transition-transform group-hover:scale-110' />
+											<FaExternalLinkAlt
+												size={16}
+												className='transition-transform group-hover:scale-110'
+											/>
 											<span>Live Demo</span>
 										</a>
 									)}

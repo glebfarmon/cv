@@ -22,10 +22,9 @@ export interface Project {
   title: string;
   tech: string[];
   description: string[];
-  date: string;
   githubLink: string | null;
   liveLink: string | null;
-  category: string;
+  deprecated?: boolean;
   image: string;
 }
 
