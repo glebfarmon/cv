@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import {useEffect, useRef, useState} from 'react'
 
 interface UseIntersectionObserverOptions extends IntersectionObserverInit {
 	freezeOnceVisible?: boolean
@@ -11,7 +11,7 @@ interface UseIntersectionObserverOptions extends IntersectionObserverInit {
 export const useIntersectionObserver = (
 	options: UseIntersectionObserverOptions = {}
 ): [React.RefObject<HTMLDivElement>, boolean] => {
-	const { threshold = 0.1, root = null, rootMargin = '0px', freezeOnceVisible = false } = options
+	const {threshold = 0.1, root = null, rootMargin = '0px', freezeOnceVisible = false} = options
 
 	const elementRef = useRef<HTMLDivElement>(null)
 	const [isIntersecting, setIsIntersecting] = useState(false)
@@ -27,7 +27,7 @@ export const useIntersectionObserver = (
 			([entry]) => {
 				setIsIntersecting(entry.isIntersecting)
 			},
-			{ threshold, root, rootMargin }
+			{threshold, root, rootMargin}
 		)
 
 		observer.observe(element)
